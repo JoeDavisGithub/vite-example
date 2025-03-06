@@ -1,22 +1,23 @@
 import './App.css'
-import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react'
-interface MovieCardProps {
+import { Link } from "react-router-dom";
+
+interface ActorCardProps {
     id: string;
-    title: string;
-    description: string;
-    actors: { id: string; fullName: string }[];
+    firstName: string;
+    lastName: string;
+    films: { id: string; title: string }[];
 }
 // shadow-sm p-3 mb-5 bg-white rounded 
 
-function MovieCard(props: MovieCardProps) {
+function ActorCard(props: ActorCardProps) {
     let val = Math.floor(Math.random() * 10);
     let idval = Number(props.id) % 10;
     const [clicked, setClicked] = useState(false);
     console.log(idval)
     //let lastDigit = Number(props.id.slice(-1));
-    let imgs = ["src/assets/film2.png", "src/assets/film3.png", "src/assets/film4.png", "src/assets/film5.png",
-        "src/assets/film6.png", "src/assets/film7.png", "src/assets/film8.png", "src/assets/film9.png", "src/assets/film10.png", "src/assets/film11.png"];
+    let imgs = ["src/assets/actor2.png", "src/assets/actor3.png", "src/assets/actor4.png", "src/assets/actor5.png",
+        "src/assets/actor6.png", "src/assets/actor7.png", "src/assets/actor8.png", "src/assets/actor9.png", "src/assets/actor10.png", "src/assets/actor11.png"];
     
     function invertState(){
         setClicked(!clicked); 
@@ -32,23 +33,20 @@ function MovieCard(props: MovieCardProps) {
                 <div className="moviecard-front">
                     <img className="movieimage grow" src={imgs[idval]}></img>
                     
-                    <p className="cardlabel"><strong>Title:</strong></p>
-                    <p>{props.title}</p>
-                    
-                    <p className="cardlabel"><strong>Description:</strong></p>
-                    <p className="cardDescription">{props.description}</p>
+                    <p className="cardlabel"><strong>Name:</strong></p>
+                    <p>{`${props.firstName} ${props.lastName}`}</p>
                 </div>
                 <div className="moviecard-back">
-                    <p className="cardlabel"><strong>Starring:</strong></p>
+                    <p className="cardlabel"><strong>Starring in:</strong></p>
                     <ul>
                         {
-                            props.actors.map((actor: {
+                            props.films.map((film: {
                                 id: string;
-                                fullName: string;
+                                title: string;
                             }) => (
-                                <div key={actor.id}>
+                                <div key={film.id}>
                                     <div className="moviecardactorlist">
-                                    <button className="moviecardbutton"><li ><Link to={"/actor?name="+actor.id}>{actor.fullName}</Link></li></button>
+                                    <button className="moviecardbutton" ><Link to={"/movie?title="+film.id}><li >{film.title}</li></Link></button>
                                     </div>
                                 </div>
                             ))}
@@ -58,7 +56,7 @@ function MovieCard(props: MovieCardProps) {
         </div>
     );
 }
-export default MovieCard;
+export default ActorCard;
 
 // function MovieCard(props:MovieCardProps) {
 //     let val = Math.floor(Math.random() * 10);

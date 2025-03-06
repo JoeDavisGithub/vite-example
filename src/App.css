@@ -140,11 +140,11 @@
   transform: rotateY(180deg);
   align-content: center;
   overflow: auto;
-  word-wrap: break-word;
+  word-wrap:break-word;
 }
 .moviecardbutton{
-  max-width:50%;
-  min-width:50%;
+  max-width:55%;
+  min-width:55%;
   word-wrap:break-word;
   padding-bottom:5px;
   background-color:rgba(79,62,254,0.1);
@@ -175,11 +175,15 @@
   margin-right:30px;
   font-size:32px;
 }
+.banner{
+  display:inline;
+}
 
-/* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
-  overflow: hidden;
+  background-color: #1a1a1a;
+  overflow:hidden;
+  width:100vw;
+  margin-bottom:10vh;
 }
 
 /* Style the links inside the navigation bar */
@@ -202,4 +206,22 @@
 .topnav a.active {
   background-color: #04AA6D;
   color: white;
+}
+.bloat{
+  background-color: red;
+  width:100%;
+  height:100%;
+}
+.greeting{
+  margin-top:40vh;
+}
+.greethead, .greetbody{
+  color:black;
+}
+
+.greethead{
+  font-size:64px;
+}
+.greetbody{
+  font-size:32px;
 }
