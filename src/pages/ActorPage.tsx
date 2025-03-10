@@ -1,46 +1,44 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
 import IndividualActor from '../IndividualActor'
 import Header from '../Header'
 
-// type Actor = {
-//     id:string;
-//     fullName:string;
-//     films:{id:string,title:string,description:string}[]
-// }
+type Actor = {
+    id: string;
+    fullName: string;
+    films: { id: string, title: string, description: string }[]
+}
 
 const ActorPage = () => {
 
     const queryParameters = new URLSearchParams(window.location.search)
     const name = queryParameters.get("name")
-    const [actor, setActor] = useState([]);
-    const [count, setCount] = useState(0);
-   
+    const [actor, setActor] = useState<Actor | null>(null);
     
-    
+
+
+
 
 
     useEffect(() => {
         console.log(name)
-        if (actor.length === 0) {
-            fetch('http://localhost:8080/actors/' + name)
+
+        fetch('http://localhost:8080/actors/' + name)
             .then((response) => response.json())
             .then((data) => setActor(data));
-            
-        }
+
+
         console.log(actor)
 
-    }, [count])
-    
+    }, [name])
+
 
     return (
         <>
             <Header />
 
-            {(actor.length !== 0) ? <IndividualActor fullName={actor.fullName} id={actor.id} films={actor.films} />: <></>} 
-            
-                {/* <div>
+            {(actor !== null) && <IndividualActor fullName={actor.fullName} id={actor.id} films={actor.films} /> }
+
+            {/* <div>
                     <p>{actor.fullname}</p>
                     {
                         actor.films.map((film: {

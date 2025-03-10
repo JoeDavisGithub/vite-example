@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../Header'
 import '../App.css'
 import ActorCardContainer from '../ActorCardContainer'
@@ -9,7 +8,6 @@ const ActorsPage = () =>{
     
     
     
-    const [count, setCount] = useState(0);
     const [actors, setActors] = useState([]);
     const [search, setSearch] = useState("");
 
@@ -18,7 +16,7 @@ const ActorsPage = () =>{
                 .then((response) => response.json())
                 .then((data) => setActors(data));
             console.log(actors);
-        }, [count])
+        }, [])
     
 
     return(

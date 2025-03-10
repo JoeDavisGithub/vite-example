@@ -1,16 +1,12 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
-import FetchButton from '../FetchButton'
 import MovieCardContainer from '../MovieCardContainer'
 import MovieFetchButton from '../MovieFetchButton'
-import { BrowserRouter } from 'react-router-dom';
 import Header from '../Header'
 import '../App.css'
 
 const MoviesPage = () => {
 
 
-    const [count, setCount] = useState(0);
     const [films, setFilms] = useState([]);
     const [search, setSearch] = useState("");
 
@@ -20,7 +16,7 @@ const MoviesPage = () => {
             .then((response) => response.json())
             .then((data) => setFilms(data));
         console.log(films);
-    }, [count])
+    }, [])
 
 
     return (
