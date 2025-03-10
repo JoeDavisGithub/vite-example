@@ -48,7 +48,7 @@ function MovieCard(props: MovieCardProps) {
                             }) => (
                                 <div key={actor.id}>
                                     <div className="moviecardactorlist">
-                                    <button className="moviecardbutton"><li ><Link to={"/actor?name="+actor.id}>{actor.fullName}</Link></li></button>
+                                    <Link to={"/actor?name="+actor.id}><button className="moviecardbutton"><li >{actor.fullName}</li></button></Link>
                                     </div>
                                 </div>
                             ))}

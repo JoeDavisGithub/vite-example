@@ -48,6 +48,10 @@ const router = createBrowserRouter([{
   {
     path:'/movie',
     element:<MoviePage />
+  },
+  {
+    path:'*',
+    element:<NotFoundPage />
   }
   
 ]
