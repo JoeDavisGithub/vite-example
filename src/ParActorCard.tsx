@@ -1,6 +1,4 @@
 import './App.css'
-import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react'
 interface ParActorCardProps {
     id: string;
     title: string;
@@ -8,21 +6,15 @@ interface ParActorCardProps {
 // shadow-sm p-3 mb-5 bg-white rounded 
 
 function ParActorCard(props: ParActorCardProps) {
-    let val = Math.floor(Math.random() * 10);
     let idval = Number(props.id) % 10;
-    const [clicked, setClicked] = useState(false);
     console.log(idval)
     //let lastDigit = Number(props.id.slice(-1));
     let imgs = ["src/assets/actor2.png", "src/assets/actor3.png", "src/assets/actor4.png", "src/assets/actor5.png",
         "src/assets/actor6.png", "src/assets/actor7.png", "src/assets/actor8.png", "src/assets/actor9.png", "src/assets/actor10.png", "src/assets/actor11.png"];
     
-    function invertState(){
-        setClicked(!clicked); 
-        console.log(clicked);
-    }
+   
 
-    let cssSelector = "moviecard" 
-    if(clicked===true){cssSelector+=" moviecardClicked"}
+    
 
     return (
             <div className="parmoviecard">

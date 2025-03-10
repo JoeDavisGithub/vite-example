@@ -1,5 +1,5 @@
 import './App.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from "react-router-dom";
 
 interface ActorCardProps {
@@ -11,7 +11,6 @@ interface ActorCardProps {
 // shadow-sm p-3 mb-5 bg-white rounded 
 
 function ActorCard(props: ActorCardProps) {
-    let val = Math.floor(Math.random() * 10);
     let idval = Number(props.id) % 10;
     const [clicked, setClicked] = useState(false);
     console.log(idval)

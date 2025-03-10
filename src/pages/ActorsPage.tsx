@@ -22,7 +22,7 @@ const ActorsPage = () =>{
     return(
         <>
             <Header />
-            <label className="homelabelleft" >Find your Film: </label>
+            <label className="homelabelleft" >Find your Actor: </label>
             <input className="movieinput" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
             <ActorFetchButton search={search} actors={actors} setActors={setActors} />
             <br /><br />

@@ -1,6 +1,4 @@
 import './App.css'
-import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react'
 interface ParMovieCardProps {
     id: string;
     title: string;
@@ -8,21 +6,13 @@ interface ParMovieCardProps {
 // shadow-sm p-3 mb-5 bg-white rounded 
 
 function ParMovieCard(props: ParMovieCardProps) {
-    let val = Math.floor(Math.random() * 10);
     let idval = Number(props.id) % 10;
-    const [clicked, setClicked] = useState(false);
     console.log(idval)
     //let lastDigit = Number(props.id.slice(-1));
     let imgs = ["src/assets/film2.png", "src/assets/film3.png", "src/assets/film4.png", "src/assets/film5.png",
         "src/assets/film6.png", "src/assets/film7.png", "src/assets/film8.png", "src/assets/film9.png", "src/assets/film10.png", "src/assets/film11.png"];
     
-    function invertState(){
-        setClicked(!clicked); 
-        console.log(clicked);
-    }
-
-    let cssSelector = "moviecard" 
-    if(clicked===true){cssSelector+=" moviecardClicked"}
+   
 
     return (
             <div className="parmoviecard">

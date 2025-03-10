@@ -1,4 +1,3 @@
-import React, { Component, useState } from 'react';
 
 interface ActorFetchButtonProps {
     search: string;
