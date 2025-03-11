@@ -13,7 +13,7 @@ const MoviesPage = () => {
 
     //can use response.content /// can navigate properties
     useEffect(() => {
-        fetch(API_URL+'films')
+        fetch(API_URL+'/films')
             .then((response) => response.json())
             .then((data) => setFilms(data));
         console.log(films);

@@ -8,7 +8,7 @@ interface MovieFetchButtonProps {
 
 function MovieFetchButton(props: MovieFetchButtonProps) {
     return(
-        <button className="fetchbutton" onClick={() => fetch(API_URL+'films?title='+props.search)
+        <button className="fetchbutton" onClick={() => fetch(API_URL+'/films?title='+props.search)
             .then((response) => response.json())
             .then((data) => props.setFilms(data))}>
             Search

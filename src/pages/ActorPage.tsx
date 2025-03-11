@@ -23,7 +23,7 @@ const ActorPage = () => {
     useEffect(() => {
         console.log(name)
 
-        fetch(API_URL+'actors/' + name)
+        fetch(API_URL+'/actors/' + name)
             .then((response) => response.json())
             .then((data) => setActor(data));
 

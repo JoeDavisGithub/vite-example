@@ -28,7 +28,7 @@ const MoviePage = () => {
     useEffect(() => {
         console.log(name)
 
-        fetch(API_URL+'films/' + name)
+        fetch(API_URL+'/films/' + name)
             .then((response) => response.json())
             .then((data) => setFilm(data));
 

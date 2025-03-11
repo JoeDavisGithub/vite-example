@@ -8,7 +8,7 @@ interface ActorFetchButtonProps {
 
 function ActorFetchButton(props: ActorFetchButtonProps) {
     return(
-        <button className="fetchbutton" onClick={() => fetch(API_URL+'actors?name='+props.search)
+        <button className="fetchbutton" onClick={() => fetch(API_URL+'/actors?name='+props.search)
             .then((response) => response.json())
             .then((data) => props.setActors(data))}>
             Search

@@ -13,7 +13,7 @@ const ActorsPage = () =>{
     const [search, setSearch] = useState("");
 
     useEffect(() => {
-            fetch(API_URL+'actors')
+            fetch(API_URL+'/actors')
                 .then((response) => response.json())
                 .then((data) => setActors(data));
             console.log(actors);
