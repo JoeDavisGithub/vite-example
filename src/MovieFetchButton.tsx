@@ -1,3 +1,4 @@
+import { API_URL } from "./config";
 
 interface MovieFetchButtonProps {
     search: string;
@@ -7,7 +8,7 @@ interface MovieFetchButtonProps {
 
 function MovieFetchButton(props: MovieFetchButtonProps) {
     return(
-        <button className="fetchbutton" onClick={() => fetch('http://localhost:8080/films?title='+props.search)
+        <button className="fetchbutton" onClick={() => fetch(API_URL+'films?title='+props.search)
             .then((response) => response.json())
             .then((data) => props.setFilms(data))}>
             Search

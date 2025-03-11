@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import IndividualActor from '../IndividualActor'
 import Header from '../Header'
+import { API_URL } from '../config'
 
 type Actor = {
     id: string;
@@ -22,7 +23,7 @@ const ActorPage = () => {
     useEffect(() => {
         console.log(name)
 
-        fetch('http://localhost:8080/actors/' + name)
+        fetch(API_URL+'actors/' + name)
             .then((response) => response.json())
             .then((data) => setActor(data));
 

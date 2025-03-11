@@ -1,16 +1,26 @@
 import './App.css'
+import actor2 from './assets/actor2.png'
+import actor3 from './assets/actor3.png'
+import actor4 from './assets/actor4.png'
+import actor5 from './assets/actor5.png'
+import actor6 from './assets/actor6.png'
+import actor7 from './assets/actor7.png'
+import actor8 from './assets/actor8.png'
+import actor9 from './assets/actor9.png'
+import actor10 from './assets/actor10.png'
+import actor11 from './assets/actor11.png'
+
 interface ParActorCardProps {
     id: string;
     title: string;
 }
-// shadow-sm p-3 mb-5 bg-white rounded 
 
 function ParActorCard(props: ParActorCardProps) {
     let idval = Number(props.id) % 10;
     console.log(idval)
     //let lastDigit = Number(props.id.slice(-1));
-    let imgs = ["src/assets/actor2.png", "src/assets/actor3.png", "src/assets/actor4.png", "src/assets/actor5.png",
-        "src/assets/actor6.png", "src/assets/actor7.png", "src/assets/actor8.png", "src/assets/actor9.png", "src/assets/actor10.png", "src/assets/actor11.png"];
+    let imgs = [actor2, actor3, actor4, actor5,
+        actor6, actor7, actor8, actor9, actor10, actor11];
     
    
 
@@ -32,36 +42,3 @@ function ParActorCard(props: ParActorCardProps) {
 }
 export default ParActorCard;
 
-
-// function ParMovieCard(props: ParMovieCardProps) {
-//     let val = Math.floor(Math.random() * 10);
-//     let idval = Number(props.id) % 10;
-//     const [clicked, setClicked] = useState(false);
-//     console.log(idval)
-//     //let lastDigit = Number(props.id.slice(-1));
-//     let imgs = ["src/assets/film2.png", "src/assets/film3.png", "src/assets/film4.png", "src/assets/film5.png",
-//         "src/assets/film6.png", "src/assets/film7.png", "src/assets/film8.png", "src/assets/film9.png", "src/assets/film10.png", "src/assets/film11.png"];
-    
-//     function invertState(){
-//         setClicked(!clicked); 
-//         console.log(clicked);
-//     }
-
-//     let cssSelector = "moviecard" 
-//     if(clicked===true){cssSelector+=" moviecardClicked"}
-
-//     return (
-
-//             <div className="moviecard-inner">
-//                 <div className="moviecard-front">
-//                     <img className="movieimage grow" src={imgs[idval]}></img>
-                    
-//                     <p className="cardlabel"><strong>Title:</strong></p>
-//                     <p>{props.title}</p>
-//                 </div>
-                
-//             </div>
-     
-//     );
-// }
-// export default ParMovieCard;

@@ -1,6 +1,16 @@
 import './App.css'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
+import actor2 from './assets/actor2.png'
+import actor3 from './assets/actor3.png'
+import actor4 from './assets/actor4.png'
+import actor5 from './assets/actor5.png'
+import actor6 from './assets/actor6.png'
+import actor7 from './assets/actor7.png'
+import actor8 from './assets/actor8.png'
+import actor9 from './assets/actor9.png'
+import actor10 from './assets/actor10.png'
+import actor11 from './assets/actor11.png'
 
 interface ActorCardProps {
     id: string;
@@ -15,8 +25,8 @@ function ActorCard(props: ActorCardProps) {
     const [clicked, setClicked] = useState(false);
     console.log(idval)
     //let lastDigit = Number(props.id.slice(-1));
-    let imgs = ["src/assets/actor2.png", "src/assets/actor3.png", "src/assets/actor4.png", "src/assets/actor5.png",
-        "src/assets/actor6.png", "src/assets/actor7.png", "src/assets/actor8.png", "src/assets/actor9.png", "src/assets/actor10.png", "src/assets/actor11.png"];
+    let imgs = [actor2, actor3, actor4, actor5,
+        actor6, actor7, actor8, actor9, actor10, actor11];
     
     function invertState(){
         setClicked(!clicked); 

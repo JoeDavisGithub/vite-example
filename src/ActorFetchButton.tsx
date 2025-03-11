@@ -1,3 +1,4 @@
+import { API_URL } from "./config";
 
 interface ActorFetchButtonProps {
     search: string;
@@ -7,7 +8,7 @@ interface ActorFetchButtonProps {
 
 function ActorFetchButton(props: ActorFetchButtonProps) {
     return(
-        <button className="fetchbutton" onClick={() => fetch('http://localhost:8080/actors?name='+props.search)
+        <button className="fetchbutton" onClick={() => fetch(API_URL+'actors?name='+props.search)
             .then((response) => response.json())
             .then((data) => props.setActors(data))}>
             Search

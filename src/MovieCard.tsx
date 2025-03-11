@@ -1,6 +1,17 @@
 import './App.css'
 import { Link } from "react-router-dom";
 import { useState } from 'react'
+import film2 from './assets/film2.png'
+import film3 from './assets/film3.png'
+import film4 from './assets/film4.png'
+import film5 from './assets/film5.png'
+import film6 from './assets/film6.png'
+import film7 from './assets/film7.png'
+import film8 from './assets/film8.png'
+import film9 from './assets/film9.png'
+import film10 from './assets/film10.png'
+import film11 from './assets/film11.png'
+
 interface MovieCardProps {
     id: string;
     title: string;
@@ -14,8 +25,8 @@ function MovieCard(props: MovieCardProps) {
     const [clicked, setClicked] = useState(false);
     console.log(idval)
     //let lastDigit = Number(props.id.slice(-1));
-    let imgs = ["src/assets/film2.png", "src/assets/film3.png", "src/assets/film4.png", "src/assets/film5.png",
-        "src/assets/film6.png", "src/assets/film7.png", "src/assets/film8.png", "src/assets/film9.png", "src/assets/film10.png", "src/assets/film11.png"];
+    let imgs = [film2, film3, film4, film5,
+        film6, film7, film8, film9, film10, film11];
     
     function invertState(){
         setClicked(!clicked); 
@@ -58,40 +69,3 @@ function MovieCard(props: MovieCardProps) {
     );
 }
 export default MovieCard;
-
-// function MovieCard(props:MovieCardProps) {
-//     let val = Math.floor(Math.random() * 10);
-//     let imgs = [img2,img3,img4,img5,img6,img7,img8,img9,img10,img11];
-//     let imgs2 = ["./assets/film2.png","./assets/film3.png","./assets/film3.png","./assets/film4.png","./assets/film5.png","./assets/film6.png"
-//         ,"./assets/film7.png","./assets/film8.png","./assets/film9.png","./assets/film10.png","./assets/film11.png"];
-//     console.log(val)
-//     return (
-//         <div>
-//             <img src={imgs2[val]}></img>
-//         </div>
-//       );
-//     }
-
-
-// <div className="moviebox">
-//             <div className="movieboxWithin">
-//                 <img className="movieimage" src={imgs[idval]}></img>
-//                 <p className="cardlabel"><strong>Title:</strong></p>
-//                 <p>{props.title}</p>
-//                 <p className="cardlabel"><strong>Description:</strong></p>
-//                 <p>{props.description}</p>
-//                 {/* <p>{props.actors.map(actor => `${actor.fullName}`).join(', ')}</p> */}
-//                 <p className="cardlabel"><strong>Starring:</strong></p>
-//                 <ul>
-//                 {
-//                     props.actors.map((actor: {
-//                         id: string;
-//                         fullName: string;
-//                     }) => (
-//                         <div key={actor.id}>
-//                             <li>{actor.fullName}</li>
-//                         </div>
-//                     ))}
-//                 </ul>
-//             </div>
-//         </div>

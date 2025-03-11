@@ -3,6 +3,7 @@ import '../App.css'
 import ActorCardContainer from '../ActorCardContainer'
 import ActorFetchButton from '../ActorFetchButton'
 import { useState, useEffect } from 'react'
+import { API_URL } from '../config'
 
 const ActorsPage = () =>{
     
@@ -12,7 +13,7 @@ const ActorsPage = () =>{
     const [search, setSearch] = useState("");
 
     useEffect(() => {
-            fetch('http://localhost:8080/actors')
+            fetch(API_URL+'actors')
                 .then((response) => response.json())
                 .then((data) => setActors(data));
             console.log(actors);

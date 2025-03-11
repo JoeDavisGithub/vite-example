@@ -3,6 +3,7 @@ import MovieCardContainer from '../MovieCardContainer'
 import MovieFetchButton from '../MovieFetchButton'
 import Header from '../Header'
 import '../App.css'
+import { API_URL } from '../config'
 
 const MoviesPage = () => {
 
@@ -12,7 +13,7 @@ const MoviesPage = () => {
 
     //can use response.content /// can navigate properties
     useEffect(() => {
-        fetch('http://localhost:8080/films')
+        fetch(API_URL+'films')
             .then((response) => response.json())
             .then((data) => setFilms(data));
         console.log(films);

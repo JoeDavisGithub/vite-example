@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import IndividualFilm from '../IndividualFilm'
 import Header from '../Header'
+import { API_URL } from '../config';
 
 
 type Film = {
@@ -27,7 +28,7 @@ const MoviePage = () => {
     useEffect(() => {
         console.log(name)
 
-        fetch('http://localhost:8080/films/' + name)
+        fetch(API_URL+'films/' + name)
             .then((response) => response.json())
             .then((data) => setFilm(data));
 
