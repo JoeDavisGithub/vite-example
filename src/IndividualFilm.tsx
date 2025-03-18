@@ -36,6 +36,8 @@ const IndividualFilm = (props: IndividudalFilmProps) => {
 
                 <span className="moviemeta">
                     <div className="movieinfo">
+                    <p className="indvdmoviedesc">{props.description}</p>
+                    <p className="indvdmovieBB"><strong>BlockBuster Details:</strong></p>
                     <p>length: {Math.floor(Number(props.length)/60)+" hours "+Number(props.length)%60+" minutes" }</p>
                     <p>Rental Rate: £{props.rentalrate}</p>
                     <p>Replacement Cost: £{props.replacementcost}</p>
@@ -51,7 +53,7 @@ const IndividualFilm = (props: IndividudalFilmProps) => {
                                     id: string;
                                     fullName: string;
                                 }) => (
-                                        <Link className="link" to={"/actor?name=" + actor.id}><li className="movieactorli">{actor.fullName}</li></Link>
+                                        <Link className="link" to={"/actor?name=" + actor.id}><li data-testid={'indmovlist-item-'+actor.id} className="movieactorli">{actor.fullName}</li></Link>
                                 ))}
                         </ul>
                     </div>

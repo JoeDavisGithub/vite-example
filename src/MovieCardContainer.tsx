@@ -8,7 +8,7 @@ interface MovieCardContainerProps {
 
 function MovieCardContainer(props: MovieCardContainerProps) {
     return (
-        <span className="moviewidth"> <div >
+        <span className="moviewidth"> 
             {
                 props.movies.map((movie: {
                     id: string;
@@ -20,7 +20,7 @@ function MovieCardContainer(props: MovieCardContainerProps) {
                         <MovieCard id={movie.id} title={movie.title} description={movie.description} actors={movie.actors} />
                     </div>
                 ))}
-        </div></span>
+        </span>
     );
 }
 

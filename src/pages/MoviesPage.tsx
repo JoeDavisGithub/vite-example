@@ -13,6 +13,8 @@ const MoviesPage = () => {
 
     //can use response.content /// can navigate properties
     useEffect(() => {
+        console.log(API_URL)
+        console.log(import.meta.env.VITE_API_URL)
         fetch(API_URL+'/films')
             .then((response) => response.json())
             .then((data) => setFilms(data));
@@ -25,7 +27,7 @@ const MoviesPage = () => {
         <>
             <Header />
             <label className="homelabelleft" >Find your Film: </label>
-            <input className="movieinput" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
+            <input className="movieinput" name="movieinput" type="text" value={search} disabled={films.length===0} onChange={(e) => setSearch(e.target.value)}></input>
             <MovieFetchButton search={search} films={films} setFilms={setFilms} />
             <br /><br />
             {(films.length !== 0) ? <MovieCardContainer movies={films} /> : <></>}

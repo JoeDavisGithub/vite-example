@@ -23,21 +23,21 @@ interface MovieCardProps {
 function MovieCard(props: MovieCardProps) {
     let idval = Number(props.id) % 10;
     const [clicked, setClicked] = useState(false);
-    console.log(idval)
+    //console.log(idval)
     //let lastDigit = Number(props.id.slice(-1));
     let imgs = [film2, film3, film4, film5,
         film6, film7, film8, film9, film10, film11];
     
     function invertState(){
         setClicked(!clicked); 
-        console.log(clicked);
+        //console.log(clicked);
     }
 
     let cssSelector = "moviecard" 
     if(clicked===true){cssSelector+=" moviecardClicked"}
 
     return (
-        <div onClick={() => invertState()} className={cssSelector}>
+        <div data-testid={'movlist-item-'+props.id} onClick={() => invertState()} className={cssSelector}>
             <div className="moviecard-inner">
                 <div className="moviecard-front">
                     <img className="movieimage grow" src={imgs[idval]}></img>
@@ -58,7 +58,7 @@ function MovieCard(props: MovieCardProps) {
                             }) => (
                                 <div key={actor.id}>
                                     <div className="moviecardactorlist">
-                                    <Link to={"/actor?name="+actor.id}><button className="moviecardbutton"><li >{actor.fullName}</li></button></Link>
+                                    <Link to={"/actor?name="+actor.id}><button data-testid={'movlist-item-'+props.id+'-'+actor.id} className="moviecardbutton"><li >{actor.fullName}</li></button></Link>
                                     </div>
                                 </div>
                             ))}

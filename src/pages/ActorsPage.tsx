@@ -16,19 +16,17 @@ const ActorsPage = () =>{
             fetch(API_URL+'/actors')
                 .then((response) => response.json())
                 .then((data) => setActors(data));
-            console.log(actors);
+            //console.log(actors);
         }, [])
-    
 
     return(
         <>
             <Header />
             <label className="homelabelleft" >Find your Actor: </label>
-            <input className="movieinput" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input>
+            <input className="movieinput" name="actorinput" type="text" value={search} onChange={(e) => setSearch(e.target.value)} disabled={actors.length===0}></input>
             <ActorFetchButton search={search} actors={actors} setActors={setActors} />
             <br /><br />
             {(actors.length !== 0) ? <ActorCardContainer actors={actors} /> : <></>}
-
 
 
         </>

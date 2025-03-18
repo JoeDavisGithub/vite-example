@@ -39,24 +39,7 @@ const ActorPage = () => {
 
             {(actor !== null) && <IndividualActor fullName={actor.fullName} id={actor.id} films={actor.films} /> }
 
-            {/* <div>
-                    <p>{actor.fullname}</p>
-                    {
-                        actor.films.map((film: {
-                            id: string;
-                            title: string;
-                        }) => (
-                            <div key={film.id}>
-                                <div className="moviecardactorlist">
-                                    <button className="moviecardbutton" ><Link to={"/movie?title=" + film.id}><p >{film.title}</p></Link></button>
-                                </div>
-                            </div>
-                        ))}
-                </div> */}
-
-
-
-            {/* {(actor.length !== 0) ?  : <></>} */}
+           
 
         </>
     )

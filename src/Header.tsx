@@ -8,11 +8,14 @@ const Header = () => {
         
         <div className="topnav">
 
-          <Link to={"/actors"}>
-            <a >Actors</a>
+          <Link to={"/actors/page"}>
+            <p className="actorNav">Actors</p>
           </Link>
-          <Link to={"/movies"}>
-            <a >Movies</a>
+          <Link to={"/movies/page"}>
+            <p className="movieNav">Movies</p>
+          </Link>
+          <Link to={"/actorcreate"}>
+            <p className="actorcreateNav">Create Actor</p>
           </Link>
           
         </div>

@@ -9,6 +9,9 @@ import NotFoundPage from './pages/NotFoundPage'
 import ActorsPage from './pages/ActorsPage'
 import MoviePage from './pages/MoviePage'
 import ActorPage from './pages/ActorPage'
+import ActorsPaginated from './pages/ActorsPaginated.tsx'
+import MoviesPaginated from './pages/MoviesPaginated.tsx'
+import CreateActorPage from './pages/CreateActorPage.tsx'
 
 const Layout = () => {
 
@@ -31,6 +34,10 @@ const router = createBrowserRouter([{
     element:<MoviesPage />
   },
   {
+    path:'/movies/page',
+    element:<MoviesPaginated />
+  },
+  {
     path:'/',
     element:<App />
   },
@@ -39,12 +46,20 @@ const router = createBrowserRouter([{
     element:<ActorsPage />
   },
   {
+    path:'/actors/page',
+    element:<ActorsPaginated />
+  },
+  {
     path:'/actor',
     element:<ActorPage />
   },
   {
     path:'/movie',
     element:<MoviePage />
+  },
+  {
+    path:'/actorcreate',
+    element:<CreateActorPage />
   },
   {
     path:'*',

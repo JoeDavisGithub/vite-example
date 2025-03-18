@@ -8,7 +8,7 @@ interface ActorCardContainerProps {
 
 function ActorCardContainer(props: ActorCardContainerProps) {
     return (
-        <span className="moviewidth"> <div >
+        <span className="moviewidth"> 
             {
                 props.actors.map((actor: {
                     id: string;
@@ -16,11 +16,11 @@ function ActorCardContainer(props: ActorCardContainerProps) {
                     lastName: string;
                     films: { id: string; title: string }[];
                 }) => (
-                    <div className="movierow" key={actor.id}>
+                    <div className="movierow"  key={actor.id}>
                         <ActorCard id={actor.id} firstName={actor.firstName} lastName={actor.lastName} films={actor.films} />
                     </div>
                 ))}
-        </div></span>
+        </span>
     );
 }
 

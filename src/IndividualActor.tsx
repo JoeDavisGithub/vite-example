@@ -34,7 +34,7 @@ const IndividualActor = (props: IndividudalActorProps) => {
                             id: string;
                             title: string;
                         }) => (
-                            <div key={film.id}>
+                            <div data-testid={'indactlist-item-'+film.id} key={film.id}>
 
                                 <Link to={"/movie?title=" + film.id}><ParMovieCard id={film.id} title={film.title} /></Link>
                             </div>

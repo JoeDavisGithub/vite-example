@@ -367,3 +367,45 @@
   font-size:64px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+:disabled {
+  display:none;
+}
+.indvdmoviedesc{
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  border-bottom:solid 1px white;
+  padding-bottom:5px;
+}
+.indvdmovieBB{
+  font-size:24px;
+}
+.createactprev{
+
+  display: inline-block;
+  justify-content: center;
+  max-width:30%;
+  min-width:30%;
+  flex-wrap:wrap;
+  padding:10px;
+  border:solid 1px black;
+  margin-inline:20px;
+  overflow-y:auto;
+  height:40vh;
+  
+}
+.createactmovboxes{
+  display:flex;
+  justify-content:center;
+  margin-top:2%;
+  margin-bottom:2%;
+  
+  
+
+}
+.createactprevlist{
+  margin-top:10px;
+}
+
+.createLabel{
+  margin-right:1vw;
+}
