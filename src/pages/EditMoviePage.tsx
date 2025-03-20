@@ -79,12 +79,11 @@ const EditMoviePage = () => {
                 setRelease_Year(data.release_year);
                 setRental_Duration(data.rental_duration);
                 setRental_Rate(data.rental_rate);
-                setRental_Duration(data.rental_duration)
+                setReplacement_Cost(data.replacement_cost);
                 setLength(data.length);
                 setRating(data.rating);
                 setSpecial_FeaturesArr(data.special_features);
-                console.log("here");
-                console.log(data.special_features);
+                
             });
         }
     
