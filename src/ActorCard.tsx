@@ -40,8 +40,9 @@ function ActorCard(props: ActorCardProps) {
         <div data-testid={'actlist-item-'+props.id} onClick={() => invertState()} className={cssSelector}>
             <div className="moviecard-inner">
                 <div className="moviecard-front">
+                    <Link to={"/actor?name="+props.id}>
                     <img className="movieimage grow" src={imgs[idval]}></img>
-                    
+                    </Link>
                     <p className="cardlabel"><strong>Name:</strong></p>
                     <p>{`${props.firstName} ${props.lastName}`}</p>
                 </div>

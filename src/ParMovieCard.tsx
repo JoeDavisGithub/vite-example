@@ -18,7 +18,6 @@ interface ParMovieCardProps {
 
 function ParMovieCard(props: ParMovieCardProps) {
     let idval = Number(props.id) % 10;
-    console.log(idval)
     //let lastDigit = Number(props.id.slice(-1));
     let imgs = [film2, film3, film4, film5,
         film6, film7, film8, film9, film10, film11];

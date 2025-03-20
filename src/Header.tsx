@@ -17,6 +17,9 @@ const Header = () => {
           <Link to={"/actorcreate"}>
             <p className="actorcreateNav">Create Actor</p>
           </Link>
+          <Link to={"/moviecreate"}>
+            <p className="actorcreateNav">Create Movie</p>
+          </Link>
           
         </div>
   );

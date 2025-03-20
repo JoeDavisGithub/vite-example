@@ -10,6 +10,8 @@ import actor8 from './assets/actor8.png'
 import actor9 from './assets/actor9.png'
 import actor10 from './assets/actor10.png'
 import actor11 from './assets/actor11.png'
+import { API_URL } from './config'
+import { useNavigate } from 'react-router-dom';
 
 interface IndividudalActorProps {
     fullName: string;
@@ -19,15 +21,32 @@ interface IndividudalActorProps {
 }
 
 
+
 const IndividualActor = (props: IndividudalActorProps) => {
     let imgs = [actor2, actor3, actor4, actor5,
         actor6, actor7, actor8, actor9, actor10, actor11];
     let idval = Number(props.id) % 10;
+    const navigate = useNavigate();
+
+    const removeActor = () => {
+    
+        fetch(API_URL+'/actors?Id='+props.id , {method:'DELETE'})
+        .then(()=>{
+            navigate("/actors/page")
+        })
+    
+    }
+    
     return (
         <>
 
             <div className="indindvdisplay">
-                <div ><img className="indvdimage" src={imgs[idval]} /><p className="indvdlabel">{props.fullName}</p></div>
+               
+                <div ><img className="indvdimage" src={imgs[idval]} /><p className="indvdlabel">{props.fullName}</p> 
+                <button className="indvdbutton" onClick={()=>removeActor()}>Delete This Actor</button>
+                <Link to={"/actoredit?name="+props.id}>
+                <button className="indvdbutton" >Edit This Actor</button> </Link>
+                </div>
                 <div className="indvdfilmlist">
                     {
                         props.films.map((film: {
@@ -39,8 +58,12 @@ const IndividualActor = (props: IndividudalActorProps) => {
                                 <Link to={"/movie?title=" + film.id}><ParMovieCard id={film.id} title={film.title} /></Link>
                             </div>
                         ))}
+                     
                 </div>
+              
+                  
             </div>
+            
         </>
     )
 }

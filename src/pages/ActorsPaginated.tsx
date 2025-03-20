@@ -23,7 +23,6 @@ const ActorsPaginated = () => {
         fetch(API_URL + '/actors/page?offset=' + Number(offset))
             .then((response) => response.json())
             .then((data) => { setActors(data.content); setTotalPageNo(data.totalPages); })
-        console.log(pageoffset)
     }, [pageoffset])
 
     useEffect(() => {

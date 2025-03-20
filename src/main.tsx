@@ -12,6 +12,9 @@ import ActorPage from './pages/ActorPage'
 import ActorsPaginated from './pages/ActorsPaginated.tsx'
 import MoviesPaginated from './pages/MoviesPaginated.tsx'
 import CreateActorPage from './pages/CreateActorPage.tsx'
+import CreateMoviePage from './pages/CreateMoviePage.tsx'
+import EditActorPage from './pages/EditActorPage.tsx'
+import EditMoviePage from './pages/EditMoviePage.tsx'
 
 const Layout = () => {
 
@@ -60,6 +63,18 @@ const router = createBrowserRouter([{
   {
     path:'/actorcreate',
     element:<CreateActorPage />
+  },
+  {
+    path:'/actoredit',
+    element:<EditActorPage />
+  },
+  {
+    path:'/moviecreate',
+    element:<CreateMoviePage />
+  },
+  {
+    path:'/movieedit',
+    element:<EditMoviePage />
   },
   {
     path:'*',

@@ -1,7 +1,7 @@
 import Header from '../Header'
 import '../App.css'
 import CreateActorFetchButton from '../CreateActorFetchButton'
-import { useState, useEffect, act } from 'react'
+import { useState, useEffect } from 'react'
 import { API_URL } from '../config'
 import { useNavigate } from 'react-router-dom';
 
@@ -9,10 +9,7 @@ type Movie = {
     id: string;
     title: string;
 }
-type Actor = {
-    id: string;
-    fullName: string;
-}
+
 
 
 
@@ -24,7 +21,6 @@ const CreateActorPage = () => {
     const [films, setFilms] = useState<Movie[]>([]);
     const [actfilms, setActFilms] = useState<Movie[]>([]);
     const [isPending,setIsPending] = useState(false);
-    const [newAct, setNewAct] = useState<Actor[]>([]);
     const navigate = useNavigate();
 
     function addfilm(film: Movie) {
@@ -47,17 +43,15 @@ const CreateActorPage = () => {
         }) => filmIds.push(Number(film.id)));
         setIsPending(true);
         const actor = {firstName,lastName,filmIds}
-        console.log("reached")
         fetch(API_URL+'/actors', {
             method: 'POST',
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify(actor)
         }).then(()=> {
-            console.log("new actor added: "+actor.firstName+" "+actor.lastName);
             setIsPending(false);
             fetch(API_URL+'/actors?name='+actor.firstName+" "+actor.lastName)
             .then((response) => response.json())
-            .then((data) => {setNewAct(data); navigate("/actor?name="+data[0].id)})
+            .then((data) => {navigate("/actor?name="+data[0].id)})
         })
 
     }
@@ -71,18 +65,21 @@ const CreateActorPage = () => {
     return (
         <>
             <Header />
-            <form onSubmit={handleSubmit}>
+            <form className="createform" onSubmit={handleSubmit}>
+            <p className="createheader">Enter the details of your Actor</p>
+
+                <div className="formtexts">
                 <div>
                 <label className="createLabel">First Name:</label><br/>
                 <label className="createLabel">Last Name:</label><br/>
-                <label className="createLabel">Look for movie to add to actor's credits :</label><br/>
+                <label className="createLabel">Look for movie to add to actor's credits:</label><br/>
                 </div>
                 <div>
                 <input  type="text" name="actFirstName" required onChange={(e)=> setFirstName(e.target.value)} ></input><br/>
                 <input type="text" name="actLastName" required onChange={(e)=> setLastName(e.target.value)} ></input><br/>
                 <input className="movieinput" name="movieinput" type="text" value={search} onChange={(e) => setSearch(e.target.value)}></input> <CreateActorFetchButton search={search} films={films} setFilms={setFilms} /><br/>
                 </div>
-            
+                </div>
             
             <div className="createactmovboxes" >
 

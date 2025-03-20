@@ -13,6 +13,7 @@ type Film = {
     length: string;
     rental_rate: string;
     replacement_cost: string;
+    rental_duration:string;
     rating:string;
     special_features:string[];
 }
@@ -26,14 +27,9 @@ const MoviePage = () => {
 
 
     useEffect(() => {
-        console.log(name)
-
         fetch(API_URL+'/films/' + name)
             .then((response) => response.json())
             .then((data) => setFilm(data));
-
-
-        console.log(film)
 
     }, [film])
 
@@ -44,7 +40,7 @@ const MoviePage = () => {
 
             {(film !== null) && <IndividualFilm id={film.id} title={film.title} description={film.description}
                 actors={film.actors} year={film.release_year} length={film.length} rentalrate={film.rental_rate} replacementcost={film.replacement_cost}
-                rating={film.rating} specialfeatures={film.special_features} />}
+                rating={film.rating} rentalduration={film.rental_duration} specialfeatures={film.special_features} />}
 
         </>
     )

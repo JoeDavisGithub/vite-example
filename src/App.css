@@ -112,9 +112,7 @@
   transform-style: preserve-3d;
 }
 
-/* .moviecard:active .moviecard-inner {
-  transform: rotateY(180deg);
-} */
+
 .moviecardClicked .moviecard-inner {
   transform: rotateY(180deg);
 }
@@ -234,7 +232,7 @@
 
 .indindvdisplay {
   display: inline-flex;
-  background-color: #000303;
+  background-color:#1a1a1a;
   margin-left: 30px;
   overflow: auto;
   width: 90vw;
@@ -391,7 +389,7 @@
   margin-inline:20px;
   overflow-y:auto;
   height:40vh;
-  
+  background-color:grey;
 }
 .createactmovboxes{
   display:flex;
@@ -399,13 +397,38 @@
   margin-top:2%;
   margin-bottom:2%;
   
-  
-
 }
 .createactprevlist{
   margin-top:10px;
+  
 }
 
 .createLabel{
   margin-right:1vw;
+}
+
+.formtexts{
+  display:inline-flex;
+  text-align: left;
+}
+.createform{
+  color:white;
+  background-color:#1a1a1a;
+  max-width:80vw;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:100px;
+  padding:2%;
+}
+.createheader{
+  font-size:24px;
+  text-decoration: underline;
+}
+.createmovinp{
+  width:100%;
+}
+.indvdbutton{
+  height:auto;
+  width:auto;
+  margin:1vw;
 }
